@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "87f5c45c-02a4-473f-a135-e1d49b498e92",
+		"name": "droove API",
+		"description": "This API allows you to connect with the droove backend and is used by both the [droove App](http://app.droove.me) as well as the [Facebook chatbot](https://www.facebook.com/messages/t/Droove.me).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users & driver profiles",
+			"description": "With these endpoints drivers can register and manage their account.",
+			"item": [
+				{
+					"name": "Register new driver",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john@droove.me\",\n  \"address\": \"Landwehrstr. 39\",\n  \"postalCode\": \"80336\",\n  \"city\": \"Hannover\",\n  \"country\": \"Deutschalnd\",\n  \"telephone\": \"+49 123 4567890\"\n}"
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/user/",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user's profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john@droove.me\",\n  \"address\": \"Landwehrstr. 39\",\n  \"postalCode\": \"80336\",\n  \"city\": \"Hannover\",\n  \"country\": \"Deutschalnd\",\n  \"telephone\": \"+49 123 4567890\"\n}"
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/user/?email=john@droove.me",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "john@droove.me"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get driver's performance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john@droove.me\",\n  \"address\": \"Landwehrstr. 39\",\n  \"postalCode\": \"80336\",\n  \"city\": \"Hannover\",\n  \"country\": \"Deutschalnd\",\n  \"telephone\": \"+49 123 4567890\"\n}"
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/user/score/?email=john@droove.me",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"user",
+								"score",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "john@droove.me"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d1f8dbdd-c560-41e5-8406-6d31a7c57b91",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "bacb757a-8f2a-4df6-9ec5-88cf53dccf58",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Community",
+			"description": "These endpoints give you general information about the community.",
+			"item": [
+				{
+					"name": "See the global leaderboard",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/leaderboard",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"leaderboard"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6d120bad-ae9a-49c7-a10c-213b2b1b44c7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c4c12567-9e1b-4638-8f6e-ad232bc60a38",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Challenges",
+			"description": "These endpoints allow you to interact with challenges from the point of view of a driver.",
+			"item": [
+				{
+					"name": "List all open challenges",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/challenge",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"challenge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Participate in a challenge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"john@droove.me\",\n\t\"challenge\": \"5ae48402d6e70d2c20c67e8c\"\n}"
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/challenge/participate/",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"challenge",
+								"participate",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "See the challenge-specific leaderboard",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"challenge\": \"5ae48402d6e70d2c20c67e8c\"\n}"
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/challenge/leaderboard/",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"challenge",
+								"leaderboard",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4155fab8-d305-4775-bded-785414e947dd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "88283ab4-802b-4ed7-9069-f1b7bf540852",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "For community operators",
+			"description": "These endpoints are for community operators like insurances that create and manage challenges.",
+			"item": [
+				{
+					"name": "Create a new challenge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Eco Challenge\",\n  \"city\": \"Deutschland\",\n  \"description\": \"In der Eco Challenge geht's um möglichst geringe CO2 Emissionen! 🍃\",\n  \"startDate\": \"2018-04-28T02:00:00.000Z\",\n  \"endDate\": \"2012-05-05T02:00:00.000Z\",\n  \"image\": \"http://www.just-spotted.com/wp-content/uploads/2011/08/eco-challenge-santa-ana-discovery-center.jpg\",\n  \"goal\": {\n    \"property\": \"fuelusage_indicator\",\n    \"highOrLow\": \"low\"\n  },\n  \"participants\": [],\n  \"price\": { \"currency\": \"EUR\", \"amount\": 50 }\n}"
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/challenge",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"challenge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close challenge & find winner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"challenge\": \"5ae48402d6e70d2c20c67e8c\"\n}"
+						},
+						"url": {
+							"raw": "http://{{APIURL}}/challenge/close/",
+							"protocol": "http",
+							"host": [
+								"{{APIURL}}"
+							],
+							"path": [
+								"challenge",
+								"close",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8f4d9f05-d193-48f7-ae6c-f502d8cc0938",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5e4ee7f2-5811-44db-a084-4f944b5c60fd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "79a24375-9219-4106-8db5-ef8bd745db76",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b4604af5-578d-43e6-a653-c27d128cc141",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
